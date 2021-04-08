@@ -3,7 +3,7 @@ kind: IstioOperator
 spec:
 values:
   gateways:
-    istio-ingressgateway:
+    istio-eastwestgateway:
       serviceAnnotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-      loadBalancerIP: 10.2.0.0 #available ip from the AKS subnet
+      loadBalancerIP: 10.2.0.100 #available ip from the AKS subnet
