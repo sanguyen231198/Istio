@@ -4,7 +4,7 @@ spec:
   profile: default
   components:
     ingressGateways:
-      - name: istio-eastwestgateway
+      - name: istio-ingressgateway
         enabled: true
         k8s:
           serviceAnnotations:
