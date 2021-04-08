@@ -1,11 +1,12 @@
-apiVersion: install.istio.io/v1alpha1
-kind: IstioOperator
+apiVersion: v1
+kind: Service
+metadata:
+  name: istio-ingressgateway
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
-  profile: default
-  components:
-    ingressGateways:
-      - name: istio-ingressgateway
-        enabled: true
-        k8s:
-          serviceAnnotations:
-            service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: istio-ingressgateway
