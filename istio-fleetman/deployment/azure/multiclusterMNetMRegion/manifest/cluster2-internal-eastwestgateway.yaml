@@ -3,7 +3,7 @@ kind: IstioOperator
 spec:
   components:
     ingressGateways:
-      - name: istio-ingressgateway
+      - name: istio-eastwestgateway
         enabled: true
         k8s:
           serviceAnnotations:
