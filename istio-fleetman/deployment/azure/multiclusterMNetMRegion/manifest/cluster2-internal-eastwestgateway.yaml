@@ -1,9 +1,12 @@
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 spec:
-values:
-  gateways:
-    istio-eastwestgateway:
-      serviceAnnotations:
-        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-      loadBalancerIP: 10.2.0.100 #available ip from the AKS subnet
+  components:
+    ingressGateways:
+      - name: istio-eastwestgateway
+        enabled: true
+        k8s:
+          serviceAnnotations:
+            service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+          service:
+            loadBalancerIP: 10.2.0.100
