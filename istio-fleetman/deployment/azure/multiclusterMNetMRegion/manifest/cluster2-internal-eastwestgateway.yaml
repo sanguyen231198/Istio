@@ -2,7 +2,7 @@ apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 spec:
   components:
-    ingressGateways:
+    eastwestGateways:
       - name: istio-eastwestgateway
         enabled: true
         k8s:
