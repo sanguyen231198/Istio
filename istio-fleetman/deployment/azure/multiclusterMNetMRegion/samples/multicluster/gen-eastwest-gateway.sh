@@ -72,7 +72,6 @@ spec:
   components:
     ingressGateways:
       - name: istio-eastwestgateway
-        enabled: true
         k8s:
           serviceAnnotations:
             service.beta.kubernetes.io/azure-load-balancer-internal: "true"
